@@ -1,0 +1,1 @@
+{"lr": 0.1, "batch_size": 100, "net": ["Convolution", "LeakyRelu", "Convolution", "LeakyRelu", "Affine"], "conv_pool_param": [{"fil": 3, "cn": 2, "fn": 32, "stride": 1, "pad": 0}, {"fil": 2, "cn": 32, "fn": 32, "stride": 1, "pad": 0}], "last_layer": "MeanSquareLoss"}
