@@ -113,7 +113,7 @@ class ConvolutionNeuralNetwork:
         else:
             self.now_channel_num = 1
         self.layers.append(layers.Conv(cn, filter_num, filter_size))
-        self.now_channel_num *= filter_num
+        self.now_channel_num = filter_num
 
     def add_pool(self, pooling_num):
         self.layers.append(layers.Pooling(pooling_num))
