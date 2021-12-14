@@ -3,11 +3,12 @@ import numpy as np
 from src.models import layers
 from src.conf import config
 from src.models import functions as fs
+from src.models import optimizers
 import matplotlib.pyplot as plt
 
 
 class ConvolutionNeuralNetwork:
-    def __init__(self, lr=0.01, batch_size=300, load_nn_name=None, activation_function_mode="r"):
+    def __init__(self, lr=0.001, batch_size=300, load_nn_name=None, activation_function_mode="r"):
         self.layers = []
         self.lr = lr
         self.batch_size = batch_size
@@ -33,13 +34,14 @@ class ConvolutionNeuralNetwork:
         self.save_param_name = None
         if load_nn_name:
             self.load_nn(load_nn_name)
+        self.optimizer = None
+        self.set_optimizer("adam")
 
     @staticmethod
     def weight_init(i, o):
         return np.random.normal(scale=1 / np.sqrt(i), size=(i, o))
 
     def predict(self, x):
-        x = self.standardization(x)
         for layer in self.layers:
             x = layer.forward(x)
         return x
@@ -78,10 +80,15 @@ class ConvolutionNeuralNetwork:
         d_out = self.last_layer.backward(d_out)
         for layer in self.layers[::-1]:
             d_out = layer.backward(d_out)
+        params = []
+        grads = []
         for layer in self.layers:
             if type(layer) in [layers.AffineLayer, layers.Conv, layers.AffineForConvLayer]:
-                layer.w -= layer.dw * self.lr
-                layer.b -= layer.db * self.lr
+                params.append(layer.w)
+                grads.append(layer.dw)
+                params.append(layer.b)
+                grads.append(layer.db)
+        self.optimizer.update(params, grads)
 
     def batch_train(self, x, t, epochs=5, save_param_name=None):
         if self.last_layer is None:
@@ -127,18 +134,24 @@ class ConvolutionNeuralNetwork:
         b = np.zeros(output_size)
         self.layers.append(layers.AffineForConvLayer(w, b))
 
+    def add_batch_normal(self):
+        self.layers.append(layers.BatchNormalization())
+
     def set_last_layer(self, layer_type):
         if layer_type == "sf":
             self.last_layer = layers.SoftmaxWithLoss()
         elif layer_type == "ms":
             self.last_layer = layers.MeanSquareLoss()
 
-    @staticmethod
-    def standardization(x):
-        x_mean = x.mean()
-        x_std = x.std()
-        out = (x - x_mean) / x_std
-        return out
+    def set_optimizer(self, opt_type):
+        if opt_type == "adam":
+            self.optimizer = optimizers.Adam(lr=self.lr)
+        elif opt_type == "ada_grad":
+            self.optimizer = optimizers.AdaGrad(lr=self.lr)
+        elif opt_type == "sgd":
+            self.optimizer = optimizers.SGD(lr=self.lr)
+        else:
+            raise ValueError("Choose Optimizer from (adam,ada_grad,sgd)")
 
     def shape_summary(self, x, print_summary=True):
         if not type(x) == tuple:
