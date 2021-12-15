@@ -109,12 +109,12 @@ class SoftmaxWithLoss:
 
 class MeanSquareLoss:
     def __init__(self):
-        self.x = None
+        self.y = None
         self.t = None
         self.loss = None
 
     def forward(self, x, t):
-        self.x = x
+        self.y = x
         self.t = t
         errors = (t - x) ** 2
         sums = np.sum(errors, axis=1)
@@ -122,7 +122,7 @@ class MeanSquareLoss:
         return self.loss
 
     def backward(self, d_out=1):
-        return -d_out * (self.t - self.x) / self.x.shape[0]
+        return -d_out * (self.t - self.y) / self.y.shape[0]
 
 
 class Conv:

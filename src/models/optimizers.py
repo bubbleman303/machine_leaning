@@ -21,7 +21,7 @@ class Adam:
         self.iter += 1
         lr_t = self.lr * np.sqrt(1.0 - self.beta2 ** self.iter) / (1.0 - self.beta1 ** self.iter)
 
-        for m, v, param, grad in enumerate(zip(self.m, self.v, params, grads)):
+        for m, v, param, grad in zip(self.m, self.v, params, grads):
             m += (1 - self.beta1) * (grad - m)
             v += (1 - self.beta2) * (grad ** 2 - v)
 

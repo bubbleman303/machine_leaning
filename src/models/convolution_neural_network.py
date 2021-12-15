@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 
 
 class ConvolutionNeuralNetwork:
-    def __init__(self, lr=0.001, batch_size=300, load_nn_name=None, activation_function_mode="r"):
+    def __init__(self, lr=0.001, batch_size=300, load_nn_name=None, activation_function_mode="r", optimizer="adam"):
         self.layers = []
         self.lr = lr
         self.batch_size = batch_size
@@ -24,7 +24,8 @@ class ConvolutionNeuralNetwork:
             layers.LeakyReluLayer: "LeakyRelu",
             layers.Conv: "Convolution",
             layers.MeanSquareLoss: "MeanSquareLoss",
-            layers.SoftmaxWithLoss: "SoftMaxWithLoss"
+            layers.SoftmaxWithLoss: "SoftMaxWithLoss",
+            layers.BatchNormalization: "BatchNormalization"
         }
         self.has_wb_list = sum([[k, self.layer_name_dict[k]] for k in (layers.Conv, layers.AffineForConvLayer)], [])
         self.has_param_list = sum([[k, self.layer_name_dict[k]] for k in (layers.Conv, layers.Pooling)], [])
@@ -35,7 +36,7 @@ class ConvolutionNeuralNetwork:
         if load_nn_name:
             self.load_nn(load_nn_name)
         self.optimizer = None
-        self.set_optimizer("adam")
+        self.set_optimizer(optimizer)
 
     @staticmethod
     def weight_init(i, o):
