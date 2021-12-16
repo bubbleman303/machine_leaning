@@ -42,6 +42,7 @@ class ConvolutionNeuralNetwork:
         self.optimizer = None
         self.set_optimizer(optimizer)
 
+
     @staticmethod
     def weight_init(i, o):
         return np.random.normal(scale=1 / np.sqrt(i), size=(i, o))
