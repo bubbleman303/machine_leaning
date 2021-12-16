@@ -46,12 +46,22 @@ class ConvolutionNeuralNetwork:
     def weight_init(i, o):
         return np.random.normal(scale=1 / np.sqrt(i), size=(i, o))
 
-    def predict(self, x, train_flag=False):
+    def predict(self, x, train_flag=False, show_percentage=False, title=None):
         for layer in self.layers:
             if type(layer) == layers.BatchNormalization:
                 x = layer.forward(x, train_flag)
             else:
                 x = layer.forward(x)
+        if show_percentage:
+            x = np.round(fs.softmax(x)[0] * 100, 2)
+            if not title:
+                title = np.arange(x.size)
+            score = ",".join([f"{k}:{p}%" for p, k in zip(x, title)])
+            ind_list = sorted([(i, v) for i, v in enumerate(x)], key=lambda t: t[1])[::-1]
+            for i in range(3):
+                print(f"{ind_list[i][0]}:{ind_list[i][1]}%")
+            print(score)
+
         return x
 
     def loss(self, x, t):
