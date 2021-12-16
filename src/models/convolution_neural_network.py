@@ -1,3 +1,4 @@
+import os
 import json
 import numpy as np
 from src.models import layers
@@ -34,8 +35,10 @@ class ConvolutionNeuralNetwork:
         self.epoch = None
         self.now_loop = None
         self.save_param_name = None
+        self.loaded = False
         if load_nn_name:
             self.load_nn(load_nn_name)
+            self.loaded = True
         self.optimizer = None
         self.set_optimizer(optimizer)
 
@@ -78,7 +81,7 @@ class ConvolutionNeuralNetwork:
     def mini_accuracy(y, t):
         return np.sum(np.argmax(y, axis=1) == np.argmax(t, axis=1)) / y.shape[0]
 
-    def train(self, x, t):
+    def _train(self, x, t):
         loss = self.loss(x, t)
         self.loss_list.append(loss)
         d_out = 1
@@ -96,6 +99,19 @@ class ConvolutionNeuralNetwork:
         self.optimizer.update(params, grads)
 
     def batch_train(self, x, t, epochs=5, save_param_name=None):
+        if save_param_name is not None and not self.loaded:
+            # パラメータが既に存在し、このバッチtrainが新規に作成されようとしたときにアラートを出す
+            if not os.path.exists(config.NN_PARAM_DIR.format(f"{save_param_name}_w_1.npy")):
+                pass
+            else:
+                if input(
+                        f"{save_param_name} is already exist.If you run this _train,"
+                        f" previous files will be removed,OK?\nEnter 'y' if continue.") != "y":
+                    if input(f"Load {save_param_name} and train start? Press enter if yes") == "":
+                        self.load_nn(save_param_name)
+                    else:
+                        print("Train canceled.")
+                        return
         if self.last_layer is None:
             raise ValueError("Last layer is not set yet.")
         self.save_param_name = save_param_name
@@ -107,7 +123,13 @@ class ConvolutionNeuralNetwork:
                 self.now_loop = i
                 data = x[index[i:i + self.batch_size]]
                 target = t[index[i:i + self.batch_size]]
-                self.train(data, target)
+                self._train(data, target)
+            test_index = np.random.permutation(np.arange(x.shape[0])[:self.batch_size])
+            print(f"{'=' * 10}epoch{epoch}done{'=' * 10}")
+            y = self.predict(x[test_index], train_flag=False)
+            print(f"accuracy_score:{self.mini_accuracy(y, t[test_index])}")
+        if save_param_name:
+            self.save_nn(save_param_name)
         # plt.plot(np.arange(len(self.loss_list)), self.loss_list)
         # plt.show()
 
@@ -227,8 +249,9 @@ class ConvolutionNeuralNetwork:
                 b = np.load(config.NN_PARAM_DIR.format(f"{name}_b_{aff_num}.npy"))
                 layer.load_wb(w, b)
             elif layer_str == "BatchNormalization":
-                running_mean = np.load(config.NN_PARAM_DIR.format(f"{name}_running_mean_{batch_num}"))
-                running_var = config.NN_PARAM_DIR.format(f"{name}_running_var_{batch_num}")
+                batch_num += 1
+                running_mean = np.load(config.NN_PARAM_DIR.format(f"{name}_running_mean_{batch_num}.npy"))
+                running_var = np.load(config.NN_PARAM_DIR.format(f"{name}_running_var_{batch_num}.npy"))
                 layer.load_mean_var(running_mean, running_var)
             self.layers.append(layer)
 

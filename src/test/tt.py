@@ -1,6 +1,9 @@
 import numpy as np
+def aiueo():
+    if True:
+        if True:
+            pass
+        print("here")
 
-x = np.random.randint(1, 10, (1, 2, 2))
-print(x)
-x = np.concatenate((x, x), axis=2)
-print(x)
+    print("ho")
+aiueo()
