@@ -343,22 +343,33 @@ class BatchNormalization:
     http://arxiv.org/abs/1502.03167
     """
 
-    def __init__(self, gamma=1, beta=0, momentum=0.9, running_mean=None, running_var=None):
+    def __init__(self, gamma=1, beta=0, momentum=0.9):
         self.gamma = gamma
         self.beta = beta
         self.momentum = momentum
         self.input_shape = None  # Conv層の場合は4次元、全結合層の場合は2次元
 
         # テスト時に使用する平均と分散
-        self.running_mean = running_mean
-        self.running_var = running_var
+        self.running_mean = None
+        self.running_var = None
 
         # backward時に使用する中間データ
         self.batch_size = None
         self.xc = None
         self.std = None
-        self.dgamma = None
-        self.dbeta = None
+        self.d_gamma = None
+        self.d_beta = None
+
+    def get_params(self):
+        return {
+            "gamma": self.gamma,
+            "beta": self.beta,
+            "momentum": self.momentum,
+        }
+
+    def load_mean_var(self, running_mean, running_var):
+        self.running_mean = running_mean
+        self.running_var = running_var
 
     def forward(self, x, train_flg=True):
         self.input_shape = x.shape
@@ -377,10 +388,19 @@ class BatchNormalization:
             self.running_var = np.zeros(D)
 
         if train_flg:
+            # 縦方向の平均値
+            '''
+            出力は(バッチ数,チャンネル×出力縦×出力横)になっているので
+            チャンネル数×出力縦×出力横に対して平均値をとっているという事になる。
+            '''
             mu = x.mean(axis=0)
+            # 平均を0にする
             xc = x - mu
+            # 分散
             var = np.mean(xc ** 2, axis=0)
+            # 標準偏差
             std = np.sqrt(var + 10e-7)
+            # 正規化
             xn = xc / std
 
             self.batch_size = x.shape[0]
@@ -391,33 +411,33 @@ class BatchNormalization:
             self.running_var = self.momentum * self.running_var + (1 - self.momentum) * var
         else:
             xc = x - self.running_mean
-            xn = xc / ((np.sqrt(self.running_var + 10e-7)))
+            xn = xc / (np.sqrt(self.running_var + 10e-7))
 
         out = self.gamma * xn + self.beta
         return out
 
-    def backward(self, dout):
-        if dout.ndim != 2:
-            N, C, H, W = dout.shape
-            dout = dout.reshape(N, -1)
+    def backward(self, d_out):
+        if d_out.ndim != 2:
+            N, C, H, W = d_out.shape
+            d_out = d_out.reshape(N, -1)
 
-        dx = self.__backward(dout)
+        dx = self.__backward(d_out)
 
         dx = dx.reshape(*self.input_shape)
         return dx
 
     def __backward(self, dout):
-        dbeta = dout.sum(axis=0)
-        dgamma = np.sum(self.xn * dout, axis=0)
+        d_beta = dout.sum(axis=0)
+        d_gamma = np.sum(self.xn * dout, axis=0)
         dxn = self.gamma * dout
         dxc = dxn / self.std
-        dstd = -np.sum((dxn * self.xc) / (self.std * self.std), axis=0)
-        dvar = 0.5 * dstd / self.std
-        dxc += (2.0 / self.batch_size) * self.xc * dvar
+        d_std = -np.sum((dxn * self.xc) / (self.std * self.std), axis=0)
+        d_var = 0.5 * d_std / self.std
+        dxc += (2.0 / self.batch_size) * self.xc * d_var
         dmu = np.sum(dxc, axis=0)
         dx = dxc - dmu / self.batch_size
 
-        self.dgamma = dgamma
-        self.dbeta = dbeta
+        self.d_gamma = d_gamma
+        self.d_beta = d_beta
 
         return dx

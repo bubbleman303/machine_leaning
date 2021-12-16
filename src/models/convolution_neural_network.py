@@ -28,7 +28,8 @@ class ConvolutionNeuralNetwork:
             layers.BatchNormalization: "BatchNormalization"
         }
         self.has_wb_list = sum([[k, self.layer_name_dict[k]] for k in (layers.Conv, layers.AffineForConvLayer)], [])
-        self.has_param_list = sum([[k, self.layer_name_dict[k]] for k in (layers.Conv, layers.Pooling)], [])
+        self.has_param_list = sum(
+            [[k, self.layer_name_dict[k]] for k in (layers.Conv, layers.Pooling, layers.BatchNormalization)], [])
         self.name_layer_dict = {v: k for k, v in self.layer_name_dict.items()}
         self.epoch = None
         self.now_loop = None
@@ -42,13 +43,16 @@ class ConvolutionNeuralNetwork:
     def weight_init(i, o):
         return np.random.normal(scale=1 / np.sqrt(i), size=(i, o))
 
-    def predict(self, x):
+    def predict(self, x, train_flag=False):
         for layer in self.layers:
-            x = layer.forward(x)
+            if type(layer) == layers.BatchNormalization:
+                x = layer.forward(x, train_flag)
+            else:
+                x = layer.forward(x)
         return x
 
     def loss(self, x, t):
-        y = self.predict(x)
+        y = self.predict(x, train_flag=True)
         if self.now_loop % 1000 == 0:
             print(f"epoch:{self.epoch} loop:{self.now_loop} accuracy:{self.mini_accuracy(y, t)}")
         if self.save_param_name and self.now_loop % 2000 == 0:
@@ -56,12 +60,12 @@ class ConvolutionNeuralNetwork:
         loss = self.last_layer.forward(y, t)
         return loss
 
-    def accuracy(self, x, t):
+    def accuracy(self, x, t, train_flag=False):
         now_sum = 0
         for i in range(0, x.shape[0], self.batch_size):
             data = x[i:i + self.batch_size]
             target = t[i:i + self.batch_size]
-            y = self.predict(data)
+            y = self.predict(data, train_flag=train_flag)
             y = np.argmax(y, axis=1)
             if target.ndim != 1:
                 target = np.argmax(target, axis=1)
@@ -181,6 +185,7 @@ class ConvolutionNeuralNetwork:
     def save_nn(self, name):
         param_dic = {"lr": self.lr, "batch_size": self.batch_size, "net": [], "conv_pool_param": []}
         aff_num = 0
+        batch_num = 0
         param_dic["last_layer"] = self.layer_name_dict[type(self.last_layer)]
         for layer in self.layers:
             layer_type = type(layer)
@@ -189,6 +194,10 @@ class ConvolutionNeuralNetwork:
                 aff_num += 1
                 np.save(config.NN_PARAM_DIR.format(f"{name}_w_{aff_num}"), layer.w)
                 np.save(config.NN_PARAM_DIR.format(f"{name}_b_{aff_num}"), layer.b)
+            elif layer_type == layers.BatchNormalization:
+                batch_num += 1
+                np.save(config.NN_PARAM_DIR.format(f"{name}_running_mean_{batch_num}"), layer.running_mean)
+                np.save(config.NN_PARAM_DIR.format(f"{name}_running_var_{batch_num}"), layer.running_var)
             if layer_type in self.has_param_list:
                 param_dic["conv_pool_param"].append(layer.get_params())
         with open(config.NN_PARAM_DIR.format(f"{name}_params.json"), "wt") as f:
@@ -202,8 +211,12 @@ class ConvolutionNeuralNetwork:
         self.last_layer = self.name_layer_dict[param_dic["last_layer"]]()
         aff_num = 0
         param_num = 0
+        batch_num = 0
         for layer_str in param_dic["net"]:
             if layer_str in self.has_param_list:
+                layer = self.name_layer_dict[layer_str](**param_dic["conv_pool_param"][param_num])
+                param_num += 1
+            elif layer_str == "BatchNormalization":
                 layer = self.name_layer_dict[layer_str](**param_dic["conv_pool_param"][param_num])
                 param_num += 1
             else:
@@ -213,6 +226,10 @@ class ConvolutionNeuralNetwork:
                 w = np.load(config.NN_PARAM_DIR.format(f"{name}_w_{aff_num}.npy"))
                 b = np.load(config.NN_PARAM_DIR.format(f"{name}_b_{aff_num}.npy"))
                 layer.load_wb(w, b)
+            elif layer_str == "BatchNormalization":
+                running_mean = np.load(config.NN_PARAM_DIR.format(f"{name}_running_mean_{batch_num}"))
+                running_var = config.NN_PARAM_DIR.format(f"{name}_running_var_{batch_num}")
+                layer.load_mean_var(running_mean, running_var)
             self.layers.append(layer)
 
 
