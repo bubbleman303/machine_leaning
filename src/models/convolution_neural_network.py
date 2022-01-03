@@ -219,7 +219,7 @@ class ConvolutionNeuralNetwork:
         param_dic = {"lr": self.lr, "batch_size": self.batch_size, "net": [], "conv_pool_param": []}
         aff_num = 0
         batch_num = 0
-        param_dic["last_layer"] = self.layer_name_dict[type(self.last_layer)]
+        param_dic["loss_layer"] = self.layer_name_dict[type(self.last_layer)]
         for layer in self.layers:
             layer_type = type(layer)
             param_dic["net"].append(self.layer_name_dict[layer_type])
@@ -241,7 +241,7 @@ class ConvolutionNeuralNetwork:
             param_dic = json.load(f)
         self.lr = param_dic["lr"]
         self.batch_size = param_dic["batch_size"]
-        self.last_layer = self.name_layer_dict[param_dic["last_layer"]]()
+        self.last_layer = self.name_layer_dict[param_dic["loss_layer"]]()
         aff_num = 0
         param_num = 0
         batch_num = 0

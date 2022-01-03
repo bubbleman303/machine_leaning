@@ -68,7 +68,7 @@ class NeuralNetWork:
         last_type = ""
         if type(self.last_layer) == layers.SoftmaxWithLoss:
             last_type = "sf"
-        param_dic["last_layer"] = last_type
+        param_dic["loss_layer"] = last_type
         for layer in self.layers:
             layer_type = type(layer)
             lt = ""
@@ -104,7 +104,7 @@ class NeuralNetWork:
                 b = np.load(config.NN_PARAM_DIR.format(f"{name}_b_{aff_num}.npy"))
                 obj = layers.AffineLayer(w, b)
             self.layers.append(obj)
-        if param_dic["last_layer"] == "sf":
+        if param_dic["loss_layer"] == "sf":
             self.last_layer = layers.SoftmaxWithLoss()
 
     def batch_train(self, x, t, epochs=5):

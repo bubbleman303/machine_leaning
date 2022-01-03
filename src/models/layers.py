@@ -117,8 +117,7 @@ class MeanSquareLoss:
         self.y = x
         self.t = t
         errors = (t - x) ** 2
-        sums = np.sum(errors, axis=1)
-        self.loss = np.mean(sums)
+        self.loss = np.sum(errors)
         return self.loss
 
     def backward(self, d_out=1):
@@ -339,9 +338,6 @@ class Dropout:
 
 
 class BatchNormalization:
-    """
-    http://arxiv.org/abs/1502.03167
-    """
 
     def __init__(self, gamma=1, beta=0, momentum=0.9):
         self.gamma = gamma
@@ -442,3 +438,22 @@ class BatchNormalization:
         self.d_beta = d_beta
 
         return dx
+
+
+class AddLayer:
+    def __init__(self, i):
+        self.w = np.ones((i, 1))
+        self.i = i
+
+    def forward(self, x):
+        out = x.reshape((-1, self.i))
+        return np.sum(out, axis=1)
+
+    def backward(self, d_out):
+        print(self.w.shape)
+        d_out = np.dot(d_out, self.w.T)
+        # d_out = d_out.reshape((d_out.shape[0], -1))
+        return d_out
+
+
+
