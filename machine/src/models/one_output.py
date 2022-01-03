@@ -37,8 +37,8 @@ class OneOutputNet:
     def add_batch(self):
         self.layers.append(layers.BatchNormalization())
 
-    def add_one_affine(self, i):
-        self.layers.append(layers.AddLayer(i))
+    def add_one_affine(self, c_num):
+        self.layers.append(layers.AddLayer(c_num))
 
     def forward(self, x, train_flag=False):
         if x.ndim == 3:
@@ -55,7 +55,6 @@ class OneOutputNet:
     def train(self, d_out):
         d_out = d_out.reshape((-1, 1))
         for layer in self.layers[::-1]:
-            print(d_out.shape)
             d_out = layer.backward(d_out)
         params = []
         grads = []

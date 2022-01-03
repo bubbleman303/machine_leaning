@@ -24,7 +24,13 @@ class OthelloLearn:
 
         pass
 
-    def _get_one_output(self, i):
+    def _get_one_output(self, i, c_num):
+        """
+        1つの入力を得る関数
+        :param i: 入力ノード数
+        :param c_num: チャンネル数（分割用に使用）
+        :return: one_outputクラス
+        """
         net = OneOutputNet(lr=self.lr, activation_mode=self.activation_mode, optimizer=self.optimizer_str)
         net.add_affine(i, self.hidden_size)
         net.add_activation()
@@ -33,7 +39,8 @@ class OthelloLearn:
             net.add_affine(self.hidden_size, self.hidden_size)
             net.add_activation()
             net.add_batch()
-        net.add_one_affine(self.hidden_size)
+        net.add_affine(self.hidden_size, 1)
+        net.add_one_affine(c_num=c_num)
         net.add_activation()
         return net
 
@@ -43,7 +50,9 @@ class OthelloLearn:
         self.layers.append(layers.AffineLayer(w, b))
 
     def set_bond(self, o, *args: int):
-        self.bond = Bond(o, [self._get_one_output(i) for i in args])
+        if len(args) % 2 != 0:
+            raise ValueError(f"param nums must be even,got{len(args)}")
+        self.bond = Bond(o, [self._get_one_output(i, k) for i, k in np.array(args).reshape(-1, 2)])
 
     def set_loss_layer(self, layer_type):
         if layer_type == "sf":

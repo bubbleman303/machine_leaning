@@ -441,19 +441,22 @@ class BatchNormalization:
 
 
 class AddLayer:
-    def __init__(self, i):
-        self.w = np.ones((i, 1))
-        self.i = i
+    def __init__(self, c_num):
+        self.w = np.ones((c_num, 1))
+        self.c_num = c_num
 
     def forward(self, x):
-        out = x.reshape((-1, self.i))
+        """
+        xの形状を(バッチ数,チャンネル数)に変える
+        :param x:入力値、(バッチ数×チャンネル数,1)の形状で入ってくる
+        :return: 1次元目の合計値を出力、つまりデータごとの合計値
+        """
+        if x.shape[-1] != 1:
+            raise ValueError("加算レイヤーの入力値の一番下が1になっていない")
+        out = x.reshape((-1, self.c_num))
         return np.sum(out, axis=1)
 
     def backward(self, d_out):
-        print(self.w.shape)
-        d_out = np.dot(d_out, self.w.T)
-        # d_out = d_out.reshape((d_out.shape[0], -1))
+        d_out = np.dot(d_out, self.w.T).reshape(-1, 1)
+
         return d_out
-
-
-
