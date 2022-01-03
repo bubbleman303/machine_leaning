@@ -1,6 +1,6 @@
 import numpy as np
-from src.models import functions as fs
-from src.models import optimizers
+from machine.src.models import functions as fs
+from machine.src.models import optimizers
 
 
 class Bond:

@@ -1,7 +1,7 @@
-from src.models import layers
+from machine.src.models import layers
 import numpy as np
-from src.models import functions as fs
-from src.models import optimizers
+from machine.src.models import functions as fs
+from machine.src.models import optimizers
 
 
 class OneOutputNet:

@@ -1,7 +1,7 @@
-from src.models import layers, functions as fs
-from src.models.one_output import OneOutputNet
-from src.models import optimizers
-from src.models.bond import Bond
+from machine.src.models import layers, functions as fs
+from machine.src.models.one_output import OneOutputNet
+from machine.src.models import optimizers
+from machine.src.models.bond import Bond
 import numpy as np
 
 

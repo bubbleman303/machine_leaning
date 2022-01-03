@@ -1,5 +1,5 @@
 import numpy as np
-import src.models.functions as fs
+import machine.src.models.functions as fs
 
 
 class MullLayer:
