@@ -2,9 +2,9 @@ import numpy as np
 import copy
 import json
 
-from src.othello_agent.board import Board
+from othello.src.othello_agent.board import Board
 import random
-from src.conf import config
+from othello.src.conf import config
 
 
 class NewOthelloAgent(Board):
@@ -370,10 +370,11 @@ class NewOthelloAgent(Board):
                 winner_str = "白の勝ち"
             print(f"{winner_str}:{max_count}")
             return pos
-        if random.random() < 0.2:
-            return self.random_pos_choice(board, turn)
-
-        return self.read_and_get_pos(board, turn)
+        # if random.random() < 0.2:
+        #     return self.random_pos_choice(board, turn)
+        #
+        # return self.read_and_get_pos(board, turn)
+        return self.random_pos_choice(board, turn)
 
     def train(self, board_list: list):
         """
@@ -500,3 +501,42 @@ class NewOthelloAgent(Board):
                  temp_list[:min(self.read_width, len(temp_list))]])
 
         return read(board, turn, 0)
+
+    def read_all_for_train(self, board_copy, turn, pss):
+        board_copy = copy.deepcopy(board_copy)
+        score_dict = {}
+        x_list = []
+        y_list = []
+
+        def read(new_board, new_turn, new_pss):
+            available_list = self.search_available_of_agent(new_board, new_turn)
+            if len(available_list) == 0:
+                new_pss += 1
+                if new_pss == 2:
+                    stone_count = self.get_stone_count(new_board)
+                    x_list.append(new_board)
+                    y_list.append(stone_count)
+                    return stone_count
+                score = read(new_board, self.turn_change_of_agent(new_turn), new_pss)
+                x_list.append(new_board)
+                y_list.append(score)
+                return score
+            score_list = []
+            for pos in available_list:
+                new_board_copy = copy.deepcopy(new_board)
+                new_board_copy = self.put_stone_of_agent(pos, new_board_copy, new_turn)
+                next_turn = self.turn_change_of_agent(new_turn)
+                new_flatten_turn_board = self.get_flatten_board_str_with_turn(new_board_copy, next_turn)
+                if new_flatten_turn_board in score_dict:
+                    score_list.append(score_dict[new_flatten_turn_board])
+                    continue
+                score_list.append(read(new_board_copy, next_turn, 0))
+            max_stone_count = self.get_max_of_turn(score_list, new_turn)
+            score_dict.update({self.get_flatten_board_str_with_turn(new_board, new_turn): max_stone_count})
+            x_list.append(new_board)
+            y_list.append(max_stone_count)
+
+            return max_stone_count
+
+        read(board_copy, turn, pss)
+        return np.array(x_list), np.array(y_list)

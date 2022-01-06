@@ -6,7 +6,9 @@ import numpy as np
 
 
 class OthelloLearn:
-    def __init__(self, lr=0.03, activation_mode="lr", optimizer="adam", depth=2, hidden_size=16, loss_layer="ms"):
+    def __init__(self, lr=0.03, activation_mode="lr", optimizer="adam", depth=2, hidden_size=16, loss_layer="ms",
+                 ):
+
         self.lr = lr
         self.activation_mode = activation_mode
         self.optimizer_str = optimizer

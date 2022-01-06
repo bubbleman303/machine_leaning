@@ -64,3 +64,9 @@ class BoardCalculator:
             temp.append(self.get_one_hot(get_c(b_copy)))
             b_copy = np.rot90(b_copy)
         return np.array(temp)
+
+    def get_train_array(self, board_list):
+        return [np.array([self.diagonal_array(board) for board in board_list]),
+                np.array([self.edge_2x_array(board) for board in board_list]),
+                np.array([self.corner_array(board) for board in board_list])
+                ]
