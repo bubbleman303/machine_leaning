@@ -20,16 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="250f75a8-bdbf-40b5-a6ce-b011678aa1df" name="Default Changelist" comment="&#10;x">
-      <change afterPath="$PROJECT_DIR$/machine/src/othello/othello_trainer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/machine/src/any_test/new_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/machine/src/any_test/new_test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/machine/src/models/othello_learn_class.py" beforeDir="false" afterPath="$PROJECT_DIR$/machine/src/models/othello_learn_class.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/machine/src/othello/learn_policy.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machine/src/othello/learn_policy2.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machine/src/othello/learn_policy3.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machine/src/othello/load_othello.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/othello/src/othello_agent/agent.py" beforeDir="false" afterPath="$PROJECT_DIR$/othello/src/othello_agent/agent.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/othello/src/othello_agent/board_calculator.py" beforeDir="false" afterPath="$PROJECT_DIR$/othello/src/othello_agent/board_calculator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/train/src/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/train/src/train.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/train/src/any/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/train/src/any/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/train/src/othello_train.py" beforeDir="false" afterPath="$PROJECT_DIR$/train/src/othello_train.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/train_models/othello.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/train_models/othello.pkl" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +48,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
-  <component name="RunManager" selected="Python.othello_train">
+  <component name="RunManager" selected="Python.test (1)">
     <configuration name="new_test (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="machine_leaning" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -163,8 +156,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.othello_train" />
         <item itemvalue="Python.test (1)" />
+        <item itemvalue="Python.othello_train" />
         <item itemvalue="Python.othello_train (1)" />
         <item itemvalue="Python.train" />
         <item itemvalue="Python.new_test (1)" />
@@ -250,7 +243,14 @@
       <option name="project" value="LOCAL" />
       <updated>1641201654177</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="&#10;x">
+      <created>1641484493271</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1641484493271</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -283,26 +283,26 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2258" y="175" key="DiffContextDialog/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1639663652469" />
-    <state width="1899" height="534" key="GridCell.Tab.0.bottom" timestamp="1641483648289">
+    <state width="1899" height="534" key="GridCell.Tab.0.bottom" timestamp="1641486310176">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state width="1515" height="195" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1641203754481" />
-    <state width="1899" height="534" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1641483648289" />
-    <state width="1899" height="534" key="GridCell.Tab.0.center" timestamp="1641483648289">
+    <state width="1899" height="534" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1641486310176" />
+    <state width="1899" height="534" key="GridCell.Tab.0.center" timestamp="1641486310176">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state width="1515" height="195" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1641203754480" />
-    <state width="1899" height="534" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1641483648289" />
-    <state width="1899" height="534" key="GridCell.Tab.0.left" timestamp="1641483648289">
+    <state width="1899" height="534" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1641486310176" />
+    <state width="1899" height="534" key="GridCell.Tab.0.left" timestamp="1641486310176">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state width="1515" height="195" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1641203754480" />
-    <state width="1899" height="534" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1641483648289" />
-    <state width="1899" height="534" key="GridCell.Tab.0.right" timestamp="1641483648289">
+    <state width="1899" height="534" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1641486310176" />
+    <state width="1899" height="534" key="GridCell.Tab.0.right" timestamp="1641486310176">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state width="1515" height="195" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1641203754481" />
-    <state width="1899" height="534" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1641483648289" />
+    <state width="1899" height="534" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1641486310176" />
     <state width="1899" height="347" key="GridCell.Tab.1.bottom" timestamp="1641479740699">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
@@ -323,11 +323,11 @@
     </state>
     <state width="1515" height="261" key="GridCell.Tab.1.right/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1640858810782" />
     <state width="1899" height="347" key="GridCell.Tab.1.right/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1641479740699" />
-    <state x="442" y="200" width="816" height="538" key="Vcs.Push.Dialog.v2" timestamp="1641201655800">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="2472" y="253" width="816" height="538" key="Vcs.Push.Dialog.v2" timestamp="1641484498291">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="442" y="200" key="Vcs.Push.Dialog.v2/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1641201655800" />
-    <state x="2472" y="253" width="816" height="538" key="Vcs.Push.Dialog.v2/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1639663653935" />
+    <state x="2472" y="253" width="816" height="538" key="Vcs.Push.Dialog.v2/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1641484498291" />
     <state x="2058" y="213" width="1042" height="529" key="dock-window-1" timestamp="1641174141856">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>

@@ -11,7 +11,7 @@ start = time.time()
 for i in range(30):
     print(i)
     board.__init__()
-    while np.where(board.board == 0)[0].size > 10:
+    while np.where(board.board == 0)[0].size > 9:
         board.random_put()
 
     x, y = agent.read_all_for_train(board.board, board.turn, board.pss)
