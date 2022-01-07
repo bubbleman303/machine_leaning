@@ -8,10 +8,10 @@ trainer = OthelloTrainer(load_leaner="othello.pkl")
 agent = NewOthelloAgent()
 board = Board()
 start = time.time()
-for i in range(30):
+for i in range(100):
     print(i)
     board.__init__()
-    while np.where(board.board == 0)[0].size > 9:
+    while np.where(board.board == 0)[0].size > 10:
         board.random_put()
 
     x, y = agent.read_all_for_train(board.board, board.turn, board.pss)

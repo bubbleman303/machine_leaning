@@ -5,7 +5,7 @@ import numpy as np
 board = Board()
 trainer = OthelloTrainer(load_leaner="othello.pkl")
 learner = trainer.leaner
-for i in range(54):
+for i in range(52):
 
     board.random_put()
 
