@@ -19,10 +19,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="250f75a8-bdbf-40b5-a6ce-b011678aa1df" name="Default Changelist" comment="&#10;x">
+    <list default="true" id="250f75a8-bdbf-40b5-a6ce-b011678aa1df" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/train/src/any/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/train/src/any/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/train/src/othello_train.py" beforeDir="false" afterPath="$PROJECT_DIR$/train/src/othello_train.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/train_models/othello.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/train_models/othello.pkl" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -40,6 +38,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="MERGE" />
+  </component>
+  <component name="GithubDefaultAccount">
+    <option name="defaultAccountId" value="a4265db9-6bc4-4ec9-9f1e-3d4b09a31bf9" />
   </component>
   <component name="ProjectId" id="22G1QlshEC5oKRzw1X05RHAbkOv" />
   <component name="ProjectViewState">
@@ -62,7 +63,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.test (1)">
+  <component name="RunManager" selected="Python.othello_train (1)">
     <configuration name="new_test (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="machine_leaning" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -170,9 +171,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.othello_train (1)" />
         <item itemvalue="Python.test (1)" />
         <item itemvalue="Python.othello_train" />
-        <item itemvalue="Python.othello_train (1)" />
         <item itemvalue="Python.train" />
         <item itemvalue="Python.new_test (1)" />
       </list>
@@ -260,7 +261,14 @@
       <option name="project" value="LOCAL" />
       <updated>1641201654177</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="&#10;x">
+      <created>1641522320128</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1641522320128</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
