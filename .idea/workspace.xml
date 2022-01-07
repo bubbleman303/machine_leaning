@@ -63,7 +63,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.othello_train (1)">
+  <component name="RunManager" selected="Python.test (1)">
     <configuration name="new_test (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="machine_leaning" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -171,8 +171,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.othello_train (1)" />
         <item itemvalue="Python.test (1)" />
+        <item itemvalue="Python.othello_train (1)" />
         <item itemvalue="Python.othello_train" />
         <item itemvalue="Python.train" />
         <item itemvalue="Python.new_test (1)" />
@@ -268,7 +268,14 @@
       <option name="project" value="LOCAL" />
       <updated>1641522320128</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="&#10;x">
+      <created>1641535396795</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1641535396795</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
