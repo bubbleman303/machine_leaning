@@ -1,5 +1,5 @@
 import numpy as np
-from src.models import functions as fs, layers, optimizers
+from src.machine.src.models import functions as fs, layers, optimizers
 
 
 class OneOutputNet:

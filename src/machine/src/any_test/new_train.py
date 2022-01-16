@@ -1,15 +1,26 @@
 import numpy as np
-import time
+from src.othello.src.othello_agent.board import Board
 
-from src.models.convolution_neural_network import ConvolutionNeuralNetwork
-from src.conf import config
+ll = []
+board = Board()
+for i in range(5):
+    board.random_put()
+    ll.append(np.copy(board.board))
 
-train_value = np.load(config.TRAIN_DATA_DIR.format("mnist/mnist_train_i.npy"))
-train_label = np.load(config.TRAIN_DATA_DIR.format("mnist/mnist_train_t.npy"))
+ll = np.array(ll)
+print(ll)
+t = np.zeros_like(ll)
+t[np.where(ll == 1)] = 2
+t[np.where(ll == 2)] = 1
+print(t)
+s = np.concatenate((ll, t))
 
-train_value = train_value.reshape((60000, 1, 28, 28)) / 255
+print(s.shape)
 
-ccn = ConvolutionNeuralNetwork(load_nn_name="new_mnist")
-start = time.time()
-ccn.batch_train(train_value, train_label, epochs=10, save_param_name="new_mnist")
-print(time.time() - start)
+t = np.random.random((5, 1))
+t2 = t * -1
+print(t)
+print(t2)
+t = np.concatenate((t,t2))
+print(t.shape)
+print(t)

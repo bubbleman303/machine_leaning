@@ -70,3 +70,19 @@ class BoardCalculator:
                 np.array([self.edge_2x_array(board) for board in board_list]),
                 np.array([self.corner_array(board) for board in board_list])
                 ]
+
+    @staticmethod
+    def inverse_board(board_list):
+        like = np.zeros_like(board_list)
+        like[np.where(board_list == 1)] = 2
+        like[np.where(board_list == 2)] = 1
+        return like
+
+    @staticmethod
+    def inverse_score(target_list):
+        return target_list * -1
+
+    def concatenate_board_and_score(self, board_list, target_list):
+        inv_board = self.inverse_board(board_list)
+        inv_target = self.inverse_score(target_list)
+        return np.concatenate((board_list, inv_board)), np.concatenate((target_list, inv_target))

@@ -511,19 +511,23 @@ class OthelloAgent(Board):
         score_dict = {}
         x_list = []
         y_list = []
+        # 残りの空きマス3以下の局面は学習に含めない
+        lim_t = len(np.where(board_copy == 0)[0]) - 3
 
-        def read(new_board, new_turn, new_pss):
+        def read(new_board, new_turn, new_pss, t):
             available_list = self.search_available_of_agent(new_board, new_turn)
             if len(available_list) == 0:
                 new_pss += 1
                 if new_pss == 2:
                     stone_count = self.get_stone_count_of_agent(new_board)
-                    x_list.append(new_board)
-                    y_list.append(stone_count)
+                    # ↓最終局面は学習させないのでコメントアウト
+                    # x_list.append(new_board)
+                    # y_list.append(stone_count)
                     return stone_count
-                score = read(new_board, self.turn_change_of_agent(new_turn), new_pss)
-                x_list.append(new_board)
-                y_list.append(score)
+                score = read(new_board, self.turn_change_of_agent(new_turn), new_pss, t)
+                # ↓重複の為削除
+                # x_list.append(new_board)
+                # y_list.append(score)
                 return score
             score_list = []
             for pos in available_list:
@@ -534,13 +538,14 @@ class OthelloAgent(Board):
                 if new_flatten_turn_board in score_dict:
                     score_list.append(score_dict[new_flatten_turn_board])
                     continue
-                score_list.append(read(new_board_copy, next_turn, 0))
+                score_list.append(read(new_board_copy, next_turn, 0, t - 1))
             max_stone_count = self.get_max_of_turn(score_list, new_turn)
             score_dict.update({self.get_flatten_board_str_with_turn(new_board, new_turn): max_stone_count})
-            x_list.append(new_board)
-            y_list.append(max_stone_count)
-
+            # 空きマスが決められたマス以上ある場合ではないと学習には含めない。
+            if t > 0:
+                x_list.append(new_board)
+                y_list.append(max_stone_count)
             return max_stone_count
 
-        read(board_copy, turn, pss)
+        read(board_copy, turn, pss, lim_t)
         return np.array(x_list), np.array(y_list)

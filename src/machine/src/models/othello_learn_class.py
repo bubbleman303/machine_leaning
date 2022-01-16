@@ -1,6 +1,6 @@
-from src.models import functions as fs, layers, optimizers
-from src.models.one_output import OneOutputNet
-from src.models.bond import Bond
+from src.machine.src.models import functions as fs, layers, optimizers
+from src.machine.src.models.one_output import OneOutputNet
+from src.machine.src.models.bond import Bond
 import numpy as np
 
 
@@ -91,8 +91,8 @@ class OthelloLearn:
                 x = layer.forward(x)
         return x
 
-    def train(self, x, t):
-        y = self.predict(x, train_flag=True)
+    def train(self, x, t, train_flag=True):
+        y = self.predict(x, train_flag=train_flag)
         loss = self.loss_layer.forward(y, t)
         self.loss_list.append(loss)
         d_out = self.loss_layer.backward()

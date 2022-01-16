@@ -6,15 +6,19 @@ import time
 import pickle
 
 sys.path.append("C:/Users/Keizaburo Takashiba/Desktop/machine_leaning")
+sys.path.append("C:/Users/Keizaburo Takashiba/Desktop/machine_leaning/src/machine")
+sys.path.append("C:/Users/Keizaburo Takashiba/Desktop/machine_leaning/src/othello")
 from src.conf import config
 from src.common import common_method as cm
 from src.othello.src.othello_agent.board import Board
 from src.othello.src.othello_agent.agent import OthelloAgent
+from src.machine.src.othello.othello_trainer import OthelloTrainer
 
 board = Board()
 wb = xw.Book(config.XL_PATH)
 
 wb.sheets["reversi"].activate()
+trainer = OthelloTrainer(load_leaner="othello.pkl")
 
 
 def load_cache() -> OthelloAgent:
@@ -38,7 +42,7 @@ def delete_cache():
         os.remove(config.CACHE_PATH)
 
 
-def write_board(reset_board=False, hi_light=False):
+def write_board(reset_board=False, hi_light=False, write_predict=False, a=None):
     highlight = np.zeros_like(board.board)
     if reset_board:
         cm.set_value(xw, config.XL_START_ROW, config.XL_START_COL, np.concatenate((highlight, highlight)))
@@ -50,6 +54,9 @@ def write_board(reset_board=False, hi_light=False):
     cm.set_value(xw, config.XL_START_ROW, config.XL_START_COL, np.concatenate((board.board, highlight)))
     board.get_stone_count()
     cm.set_value(xw, 12, 9, board.stone_count)
+    if write_predict:
+        write_trainer_predict()
+        write_pos_list_predict(a)
 
 
 def read_board():
@@ -72,7 +79,7 @@ def write_stone_count(s=None):
 def write_real_stone_count(reset_value=False, agent: OthelloAgent = None):
     start_row, start_col = 6, 20
     if reset_value:
-        cm.set_value(xw, start_row, start_col, [[None, None] for _ in range(20)])
+        cm.set_value(xw, start_row, start_col, [[None, None, None] for _ in range(20)])
         return
     if agent.read_his is None:
         return
@@ -80,6 +87,25 @@ def write_real_stone_count(reset_value=False, agent: OthelloAgent = None):
     temp = [[None, None] for _ in range(20)]
     temp[:len(pos_list)] = [[f"{pos[0]} {pos[1]}", score] for pos, score in zip(pos_list, score_list)]
     cm.set_value(xw, start_row, start_col, temp)
+
+
+def write_trainer_predict():
+    x = np.round(trainer.predict([board.board, np.zeros((8, 8))], train_flag=False).flat[0], decimals=2)
+    if board.turn == 2:
+        x *= -1
+    cm.set_value(xw, 4, 21, x)
+
+
+def write_pos_list_predict(agent: OthelloAgent):
+    pos_list = agent.search_available_of_agent(board.board, board.turn)
+    board_list = [agent.put_stone_of_agent(pos, board.board, board.turn) for pos in pos_list]
+    predict = np.round(trainer.predict(board_list), decimals=2)
+    # こちらが黒番の時は打った先の局面は白番になるから。
+    if board.turn == 1:
+        predict -= 1
+    temp = np.array([[None] for _ in range(20)])
+    temp[:predict.shape[0]] = predict
+    cm.set_value(xw, 6, 22, temp)
 
 
 def reset():
@@ -112,7 +138,7 @@ def random_board():
         write_board()
     if not board.turn == turn:
         board.random_put()
-    write_board()
+    write_board(hi_light=True)
     cm.set_value(xw, 12, 6, None)
     sys.exit()
 
@@ -144,7 +170,7 @@ def put():
         if agent.max_count is not None:
             write_stone_count(f"{agent.winner_str},石差:{agent.max_count}")
         board.put_stone(pos)
-        write_board(hi_light=True)
+        write_board(hi_light=True, write_predict=True, a=agent)
         if len(board.search_available()) != 0:
             board.pss = 0
             write_real_stone_count(agent=agent)
