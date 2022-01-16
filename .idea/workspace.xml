@@ -20,8 +20,102 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="250f75a8-bdbf-40b5-a6ce-b011678aa1df" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/common/common_method.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/machine/src/any_test/new_othello.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/play_at_xls/play.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/train_models/othello3.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/machine_leaning.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/machine_leaning.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/train_models/othello.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/train_models/othello.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conf/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/conf/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/machine/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/src/machine/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/machine/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/machine/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/machine/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/machine/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/machine/.idea/machine_leaning.iml" beforeDir="false" afterPath="$PROJECT_DIR$/src/machine/.idea/machine_leaning.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/machine/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/machine/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/machine/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/machine/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/machine/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/machine/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/machine/params/nn_params/mnist_b_1.npy" beforeDir="false" afterPath="$PROJECT_DIR$/src/machine/params/nn_params/mnist_b_1.npy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/machine/params/nn_params/mnist_b_2.npy" beforeDir="false" afterPath="$PROJECT_DIR$/src/machine/params/nn_params/mnist_b_2.npy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/machine/params/nn_params/mnist_b_3.npy" beforeDir="false" afterPath="$PROJECT_DIR$/src/machine/params/nn_params/mnist_b_3.npy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/machine/params/nn_params/mnist_params.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/machine/params/nn_params/mnist_params.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/machine/params/nn_params/mnist_sf_version_b_1.npy" beforeDir="false" afterPath="$PROJECT_DIR$/src/machine/params/nn_params/mnist_sf_version_b_1.npy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/machine/params/nn_params/mnist_sf_version_b_2.npy" beforeDir="false" afterPath="$PROJECT_DIR$/src/machine/params/nn_params/mnist_sf_version_b_2.npy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/machine/params/nn_params/mnist_sf_version_b_3.npy" beforeDir="false" afterPath="$PROJECT_DIR$/src/machine/params/nn_params/mnist_sf_version_b_3.npy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/machine/params/nn_params/mnist_sf_version_params.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/machine/params/nn_params/mnist_sf_version_params.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/machine/params/nn_params/mnist_sf_version_running_mean_1.npy" beforeDir="false" afterPath="$PROJECT_DIR$/src/machine/params/nn_params/mnist_sf_version_running_mean_1.npy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/machine/params/nn_params/mnist_sf_version_running_mean_2.npy" beforeDir="false" afterPath="$PROJECT_DIR$/src/machine/params/nn_params/mnist_sf_version_running_mean_2.npy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/machine/params/nn_params/mnist_sf_version_running_var_1.npy" beforeDir="false" afterPath="$PROJECT_DIR$/src/machine/params/nn_params/mnist_sf_version_running_var_1.npy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/machine/params/nn_params/mnist_sf_version_running_var_2.npy" beforeDir="false" afterPath="$PROJECT_DIR$/src/machine/params/nn_params/mnist_sf_version_running_var_2.npy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/machine/params/nn_params/mnist_sf_version_w_1.npy" beforeDir="false" afterPath="$PROJECT_DIR$/src/machine/params/nn_params/mnist_sf_version_w_1.npy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/machine/params/nn_params/mnist_sf_version_w_2.npy" beforeDir="false" afterPath="$PROJECT_DIR$/src/machine/params/nn_params/mnist_sf_version_w_2.npy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/machine/params/nn_params/mnist_sf_version_w_3.npy" beforeDir="false" afterPath="$PROJECT_DIR$/src/machine/params/nn_params/mnist_sf_version_w_3.npy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/machine/params/nn_params/mnist_w_1.npy" beforeDir="false" afterPath="$PROJECT_DIR$/src/machine/params/nn_params/mnist_w_1.npy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/machine/params/nn_params/mnist_w_2.npy" beforeDir="false" afterPath="$PROJECT_DIR$/src/machine/params/nn_params/mnist_w_2.npy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/machine/params/nn_params/mnist_w_3.npy" beforeDir="false" afterPath="$PROJECT_DIR$/src/machine/params/nn_params/mnist_w_3.npy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/machine/params/nn_params/new_mnist_b_1.npy" beforeDir="false" afterPath="$PROJECT_DIR$/src/machine/params/nn_params/new_mnist_b_1.npy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/machine/params/nn_params/new_mnist_b_2.npy" beforeDir="false" afterPath="$PROJECT_DIR$/src/machine/params/nn_params/new_mnist_b_2.npy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/machine/params/nn_params/new_mnist_b_3.npy" beforeDir="false" afterPath="$PROJECT_DIR$/src/machine/params/nn_params/new_mnist_b_3.npy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/machine/params/nn_params/new_mnist_params.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/machine/params/nn_params/new_mnist_params.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/machine/params/nn_params/new_mnist_w_1.npy" beforeDir="false" afterPath="$PROJECT_DIR$/src/machine/params/nn_params/new_mnist_w_1.npy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/machine/params/nn_params/new_mnist_w_2.npy" beforeDir="false" afterPath="$PROJECT_DIR$/src/machine/params/nn_params/new_mnist_w_2.npy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/machine/params/nn_params/new_mnist_w_3.npy" beforeDir="false" afterPath="$PROJECT_DIR$/src/machine/params/nn_params/new_mnist_w_3.npy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/machine/params/nn_params/reversi2_b_1.npy" beforeDir="false" afterPath="$PROJECT_DIR$/src/machine/params/nn_params/reversi2_b_1.npy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/machine/params/nn_params/reversi2_b_2.npy" beforeDir="false" afterPath="$PROJECT_DIR$/src/machine/params/nn_params/reversi2_b_2.npy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/machine/params/nn_params/reversi2_b_3.npy" beforeDir="false" afterPath="$PROJECT_DIR$/src/machine/params/nn_params/reversi2_b_3.npy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/machine/params/nn_params/reversi2_params.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/machine/params/nn_params/reversi2_params.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/machine/params/nn_params/reversi2_w_1.npy" beforeDir="false" afterPath="$PROJECT_DIR$/src/machine/params/nn_params/reversi2_w_1.npy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/machine/params/nn_params/reversi2_w_2.npy" beforeDir="false" afterPath="$PROJECT_DIR$/src/machine/params/nn_params/reversi2_w_2.npy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/machine/params/nn_params/reversi2_w_3.npy" beforeDir="false" afterPath="$PROJECT_DIR$/src/machine/params/nn_params/reversi2_w_3.npy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/machine/params/nn_params/reversi3_b_1.npy" beforeDir="false" afterPath="$PROJECT_DIR$/src/machine/params/nn_params/reversi3_b_1.npy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/machine/params/nn_params/reversi3_b_2.npy" beforeDir="false" afterPath="$PROJECT_DIR$/src/machine/params/nn_params/reversi3_b_2.npy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/machine/params/nn_params/reversi3_b_3.npy" beforeDir="false" afterPath="$PROJECT_DIR$/src/machine/params/nn_params/reversi3_b_3.npy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/machine/params/nn_params/reversi3_b_4.npy" beforeDir="false" afterPath="$PROJECT_DIR$/src/machine/params/nn_params/reversi3_b_4.npy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/machine/params/nn_params/reversi3_b_5.npy" beforeDir="false" afterPath="$PROJECT_DIR$/src/machine/params/nn_params/reversi3_b_5.npy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/machine/params/nn_params/reversi3_params.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/machine/params/nn_params/reversi3_params.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/machine/params/nn_params/reversi3_w_1.npy" beforeDir="false" afterPath="$PROJECT_DIR$/src/machine/params/nn_params/reversi3_w_1.npy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/machine/params/nn_params/reversi3_w_2.npy" beforeDir="false" afterPath="$PROJECT_DIR$/src/machine/params/nn_params/reversi3_w_2.npy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/machine/params/nn_params/reversi3_w_3.npy" beforeDir="false" afterPath="$PROJECT_DIR$/src/machine/params/nn_params/reversi3_w_3.npy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/machine/params/nn_params/reversi3_w_4.npy" beforeDir="false" afterPath="$PROJECT_DIR$/src/machine/params/nn_params/reversi3_w_4.npy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/machine/params/nn_params/reversi3_w_5.npy" beforeDir="false" afterPath="$PROJECT_DIR$/src/machine/params/nn_params/reversi3_w_5.npy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/machine/params/nn_params/reversi_b_1.npy" beforeDir="false" afterPath="$PROJECT_DIR$/src/machine/params/nn_params/reversi_b_1.npy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/machine/params/nn_params/reversi_b_2.npy" beforeDir="false" afterPath="$PROJECT_DIR$/src/machine/params/nn_params/reversi_b_2.npy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/machine/params/nn_params/reversi_b_3.npy" beforeDir="false" afterPath="$PROJECT_DIR$/src/machine/params/nn_params/reversi_b_3.npy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/machine/params/nn_params/reversi_params.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/machine/params/nn_params/reversi_params.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/machine/params/nn_params/reversi_w_1.npy" beforeDir="false" afterPath="$PROJECT_DIR$/src/machine/params/nn_params/reversi_w_1.npy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/machine/params/nn_params/reversi_w_2.npy" beforeDir="false" afterPath="$PROJECT_DIR$/src/machine/params/nn_params/reversi_w_2.npy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/machine/params/nn_params/reversi_w_3.npy" beforeDir="false" afterPath="$PROJECT_DIR$/src/machine/params/nn_params/reversi_w_3.npy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/machine/src/any_test/affine_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/machine/src/any_test/affine_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/machine/src/any_test/another_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/machine/src/any_test/another_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/machine/src/any_test/new_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/machine/src/any_test/new_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/machine/src/any_test/new_train.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/machine/src/any_test/new_train.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/machine/src/any_test/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/machine/src/any_test/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/machine/src/any_test/train_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/machine/src/any_test/train_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/machine/src/conf/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/machine/src/conf/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/machine/src/models/bond.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/machine/src/models/bond.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/machine/src/models/convolution_neural_network.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/machine/src/models/convolution_neural_network.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/machine/src/models/functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/machine/src/models/functions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/machine/src/models/layers.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/machine/src/models/layers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/machine/src/models/neural_net.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/machine/src/models/neural_net.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/machine/src/models/one_output.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/machine/src/models/one_output.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/machine/src/models/optimizers.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/machine/src/models/optimizers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/machine/src/models/othello_learn_class.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/machine/src/models/othello_learn_class.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/machine/src/othello/othello_trainer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/machine/src/othello/othello_trainer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/machine/src/test/act.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/machine/src/test/act.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/machine/src/test/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/machine/src/test/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/machine/src/test/train_mnist.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/machine/src/test/train_mnist.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/machine/src/test/tt.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/machine/src/test/tt.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/othello/params/diag_pos_dict.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/othello/params/diag_pos_dict.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/othello/params/reverse_dict.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/othello/params/reverse_dict.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/othello/src/conf/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/othello/src/conf/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/othello/src/othello_agent/agent.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/othello/src/othello_agent/agent.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/othello/src/othello_agent/board.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/othello/src/othello_agent/board.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/othello/src/othello_agent/board_calculator.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/othello/src/othello_agent/board_calculator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/othello/src/test/battle.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/othello/src/test/battle.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/othello/src/test/import_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/othello/src/test/import_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/othello/src/test/vs_human.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/othello/src/test/vs_human.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/train/src/any/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/train/src/any/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/train/src/othello_train.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/train/src/othello_train.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/train/src/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/train/src/train.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,28 +137,51 @@
     <option name="defaultAccountId" value="a4265db9-6bc4-4ec9-9f1e-3d4b09a31bf9" />
   </component>
   <component name="ProjectId" id="22G1QlshEC5oKRzw1X05RHAbkOv" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/common" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Keizaburo Takashiba\Desktop\machine_leaning\src\common" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Keizaburo Takashiba\Desktop\machine_leaning\src" />
+      <recent name="C:\Users\Keizaburo Takashiba\Desktop\machine_leaning\src\conf" />
+    </key>
   </component>
-  <component name="RunManager" selected="Python.test (1)">
-    <configuration name="new_test (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.new_othello (1)">
+    <configuration name="new_othello (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="machine_leaning" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/machine/src/any_test" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/machine/src/any_test/new_othello.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="new_othello" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="machine_leaning" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -76,7 +193,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/machine/src/any_test/new_test.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/machine/src/any_test/new_othello.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -85,7 +202,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="othello_train (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="play" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="machine_leaning" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -93,32 +210,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/train/src" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/play_at_xls" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/train/src/othello_train.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="othello_train" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="machine_leaning" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/train/src" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="C:\Users\Keizaburo Takashiba\Desktop\machine_leaning\train\src\othello_train.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/play_at_xls/play.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -135,11 +231,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/train/src/any" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/machine/src/test" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/train/src/any/test.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/machine/src/test/test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -148,7 +244,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="train" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="vs_human" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="machine_leaning" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -156,11 +252,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/train/src" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/othello/src/test" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/train/src/train.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/othello/src/test/vs_human.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -169,17 +265,24 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Python.new_othello" />
+      <item itemvalue="Python.play" />
+      <item itemvalue="Python.vs_human" />
+      <item itemvalue="Python.test (1)" />
+      <item itemvalue="Python.new_othello (1)" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.new_othello (1)" />
         <item itemvalue="Python.test (1)" />
-        <item itemvalue="Python.othello_train (1)" />
-        <item itemvalue="Python.othello_train" />
-        <item itemvalue="Python.train" />
-        <item itemvalue="Python.new_test (1)" />
+        <item itemvalue="Python.vs_human" />
+        <item itemvalue="Python.play" />
+        <item itemvalue="Python.new_othello" />
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -283,24 +386,24 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="edit" />
     <MESSAGE value="&#10;x" />
     <option name="LAST_COMMIT_MESSAGE" value="&#10;x" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="2334" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1639656564111">
+    <state x="2334" y="175" width="1092" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1642002689316">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2334" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1639656564111" />
+    <state x="2334" y="175" width="1092" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1642002689316" />
     <state x="2571" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1639650874657">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
@@ -309,26 +412,30 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2258" y="175" key="DiffContextDialog/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1639663652469" />
-    <state width="1899" height="534" key="GridCell.Tab.0.bottom" timestamp="1641483648289">
+    <state x="2390" y="211" key="FileChooserDialogImpl" timestamp="1642002686646">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1515" height="195" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1641203754481" />
-    <state width="1899" height="534" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1641483648289" />
-    <state width="1899" height="534" key="GridCell.Tab.0.center" timestamp="1641483648289">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state x="2390" y="211" key="FileChooserDialogImpl/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1642002686645" />
+    <state width="840" height="347" key="GridCell.Tab.0.bottom" timestamp="1642324557623">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="195" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1641203754480" />
-    <state width="1899" height="534" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1641483648289" />
-    <state width="1899" height="534" key="GridCell.Tab.0.left" timestamp="1641483648289">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state width="840" height="347" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1642324557623" />
+    <state width="1016" height="407" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1642244452150" />
+    <state width="840" height="347" key="GridCell.Tab.0.center" timestamp="1642324557623">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="195" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1641203754480" />
-    <state width="1899" height="534" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1641483648289" />
-    <state width="1899" height="534" key="GridCell.Tab.0.right" timestamp="1641483648289">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state width="840" height="347" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1642324557623" />
+    <state width="1016" height="407" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1642244452150" />
+    <state width="840" height="347" key="GridCell.Tab.0.left" timestamp="1642324557622">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="195" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1641203754481" />
-    <state width="1899" height="534" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1641483648289" />
+    <state width="840" height="347" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1642324557622" />
+    <state width="1016" height="407" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1642244452150" />
+    <state width="840" height="347" key="GridCell.Tab.0.right" timestamp="1642324557623">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="840" height="347" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1642324557623" />
+    <state width="1016" height="407" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1642244452150" />
     <state width="1899" height="347" key="GridCell.Tab.1.bottom" timestamp="1641479740699">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
@@ -349,16 +456,24 @@
     </state>
     <state width="1515" height="261" key="GridCell.Tab.1.right/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1640858810782" />
     <state width="1899" height="347" key="GridCell.Tab.1.right/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1641479740699" />
+    <state x="2552" y="84" width="983" height="708" key="SettingsEditor" timestamp="1641998451308">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2552" y="84" width="983" height="708" key="SettingsEditor/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1641998451308" />
     <state x="442" y="200" width="816" height="538" key="Vcs.Push.Dialog.v2" timestamp="1641201655800">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="442" y="200" key="Vcs.Push.Dialog.v2/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1641201655800" />
     <state x="2472" y="253" width="816" height="538" key="Vcs.Push.Dialog.v2/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1639663653935" />
-    <state x="2058" y="213" width="1042" height="529" key="dock-window-1" timestamp="1641174141856">
+    <state x="2697" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1641997575450">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
+    <state x="2697" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1641997575450" />
+    <state x="16" y="103" width="1502" height="678" key="dock-window-1" timestamp="1642236483437">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
     <state x="2058" y="213" width="1042" height="529" key="dock-window-1/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1641174141856" />
-    <state x="-6" y="0" width="1550" height="720" key="dock-window-1/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1639658608892" />
+    <state x="16" y="103" width="1502" height="678" key="dock-window-1/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1642236483437" />
     <state x="2739" y="84" width="1042" height="529" key="dock-window-2" timestamp="1641170592219">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
@@ -371,15 +486,15 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="490" y="190" width="1216" height="781" key="dock-window-4/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1641484432095" />
-    <state x="-227" y="0" width="1457" height="579" maximized="true" key="dock-window-5" timestamp="1641484432096">
+    <state x="-142" y="394" width="1457" height="579" key="dock-window-5" timestamp="1641888680165">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="-227" y="0" width="1457" height="579" maximized="true" key="dock-window-5/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1641484432096" />
-    <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1641476293913">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state x="-142" y="394" width="1457" height="579" key="dock-window-5/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1641888680165" />
+    <state x="498" y="178" width="672" height="538" key="search.everywhere.popup" timestamp="1642259792202">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="498" y="178" width="672" height="538" key="search.everywhere.popup/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1641195937161" />
-    <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1641476293913" />
+    <state x="498" y="178" width="672" height="538" key="search.everywhere.popup/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1642259792202" />
+    <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1642237335851" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
